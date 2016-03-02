@@ -95,7 +95,6 @@
   </platform>
   <preference name="orientation" value="portrait" />
   <preference name="fullscreen" value="false" />
-  <preference name="permissions" value="none"/>
   <!-- iOS -->
   <preference name="target-device" value="universal" />
   <access origin="http://ejectufrn.com.br" subdomains="true" />
