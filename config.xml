@@ -3,9 +3,6 @@
   <name>AtaSIGEJ</name>
   <description>Aplicativo para dar entrada e saída na Ata Virtual da EJECT - Empresa Júnior da Escola de Ciências e Tecnologia - UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
-  <gap:platform name="winphone" />
-  <gap:platform name="android" />
-  <gap:platform name="ios" />
   <content src="index.html" />
   <icon src="res/icon.png" />
   <vs:features />
