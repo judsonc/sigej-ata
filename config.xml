@@ -4,7 +4,6 @@
   <description>Aplicativo para dar entrada e saída na Ata Virtual da EJECT - Empresa Júnior da Escola de Ciências e Tecnologia - UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
   <content src="index.html" />
-  <icon src="res/icon.png" />
   <vs:features />
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="10.0" />
