@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.2.1" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
   <name>AtaSIGEJ</name>
-  <description>Aplicativo para dar entrada e saida na Ata Virtual da EJECT - Empresa Junior da Escola de Ciencias e Tecnologia - UFRN</description>
+  <description>Aplicativo para dar entrada e saida na Ata Virtual da EJECT / UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
   <gap:platform name="winphone" />
   <gap:platform name="android" />
