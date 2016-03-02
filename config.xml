@@ -3,6 +3,9 @@
   <name>AtaSIGEJ</name>
   <description>Aplicativo para dar entrada e saída na Ata Virtual da EJECT - Empresa Júnior da Escola de Ciências e Tecnologia - UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
+  <gap:platform name="winphone" />
+  <gap:platform name="android" />
+  <gap:platform name="ios" />
   <content src="index.html" />
   <icon src="res/icon.png" />
   <vs:features />
@@ -90,15 +93,11 @@
   <platform name="wp8">
     <splash src="res/screens/wp8/splashscreen.jpg" width="480" height="800" />
   </platform>
-  <preference name="Orientation" value="portrait" />
-  <preference name="Fullscreen" value="false" />
+  <preference name="orientation" value="portrait" />
+  <preference name="fullscreen" value="false" />
   <preference name="permissions" value="none"/>
   <!-- iOS -->
   <preference name="target-device" value="universal" />
-  <preference name="exit-on-suspend" value="true" />
-  <preference name="detect-data-types" value="false" />
-  <!-- Android -->
-  <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
   <access origin="http://ejectufrn.com.br" subdomains="true" />
   <plugin name="cordova-plugin-network-information" version="1.2.0" />
   <plugin name="cordova-plugin-device" version="1.1.1" />
