@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.2.1" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.2.5" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
   <name>AtaSIGEJ</name>
   <description>Aplicativo para dar entrada e saída na Ata Virtual da EJECT - Empresa Júnior da Escola de Ciências e Tecnologia - UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
@@ -7,6 +7,9 @@
   <vs:features />
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="10.0" />
+  <preference name="orientation" value="portrait" />
+  <preference name="fullscreen" value="false" />
+  <preference name="permissions" value="none"/>
   <!-- Support for Cordova 5.0.0 plugin system -->
   <plugin name="cordova-plugin-whitelist" version="1" />
   <allow-intent href="http://*/*" />
@@ -19,10 +22,10 @@
     <allow-intent href="itms-apps:*" />
   </platform>
   <platform name="android">
-    <icon src="res/icons/android/icon.png" density="ldpi" />
-    <icon src="res/icons/android/icon.png" density="mdpi" />
-    <icon src="res/icons/android/icon.png" density="hdpi" />
-    <icon src="res/icons/android/icon.png" density="xhdpi" />
+    <icon src="res/icons/android/icon36.png" density="ldpi" />
+    <icon src="res/icons/android/icon48.png" density="mdpi" />
+    <icon src="res/icons/android/icon72.png" density="hdpi" />
+    <icon src="res/icons/android/icon96.png" density="xhdpi" />
   </platform>
   <platform name="ios">
     <!-- iOS 8.0+ -->
@@ -60,44 +63,41 @@
     <icon src="res/icons/wp8/icon.png" width="173" height="173" />
   </platform>
   <platform name="android">
-    <splash src="res/screens/android/screen-hdpi-landscape.png" density="land-hdpi" />
-    <splash src="res/screens/android/screen-ldpi-landscape.png" density="land-ldpi" />
-    <splash src="res/screens/android/screen-mdpi-landscape.png" density="land-mdpi" />
-    <splash src="res/screens/android/screen-xhdpi-landscape.png" density="land-xhdpi" />
-    <splash src="res/screens/android/screen-hdpi-portrait.png" density="port-hdpi" />
-    <splash src="res/screens/android/screen-ldpi-portrait.png" density="port-ldpi" />
-    <splash src="res/screens/android/screen-mdpi-portrait.png" density="port-mdpi" />
-    <splash src="res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi" />
+    <splash src="res/screens/android/screen-landscape.png" density="land-hdpi" />
+    <splash src="res/screens/android/screen-landscape.png" density="land-ldpi" />
+    <splash src="res/screens/android/screen-landscape.png" density="land-mdpi" />
+    <splash src="res/screens/android/screen-landscape.png" density="land-xhdpi" />
+    <splash src="res/screens/android/screen-portrait.png" density="port-hdpi" />
+    <splash src="res/screens/android/screen-portrait.png" density="port-ldpi" />
+    <splash src="res/screens/android/screen-portrait.png" density="port-mdpi" />
+    <splash src="res/screens/android/screen-portrait.png" density="port-xhdpi" />
   </platform>
   <platform name="ios">
     <splash src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480" />
-    <splash src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" height="960" />
-    <splash src="res/screens/ios/screen-ipad-portrait.png" width="768" height="1024" />
-    <splash src="res/screens/ios/screen-ipad-portrait-2x.png" width="1536" height="2048" />
-    <splash src="res/screens/ios/screen-ipad-landscape.png" width="1024" height="768" />
-    <splash src="res/screens/ios/screen-ipad-landscape-2x.png" width="2048" height="1536" />
-    <splash src="res/screens/ios/screen-iphone-568h-2x.png" width="640" height="1136" />
-    <splash src="res/screens/ios/screen-iphone-portrait-667h.png" width="750" height="1334" />
-    <splash src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" height="2208" />
-    <splash src="res/screens/ios/screen-iphone-landscape-736h.png" width="2208" height="1242" />
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="640" height="960" />
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="768" height="1024" />
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="1536" height="2048" />
+    <splash src="res/screens/ios/screen-iphone-landscape.png" width="1024" height="768" />
+    <splash src="res/screens/ios/screen-iphone-landscape.png" width="2048" height="1536" />
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="640" height="1136" />
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="750" height="1334" />
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="1242" height="2208" />
+    <splash src="res/screens/ios/screen-iphone-landscape.png" width="2208" height="1242" />
   </platform>
   <platform name="windows">
-    <splash src="res/screens/windows/splashscreen.png" width="620" height="300" />
-    <splash src="res/screens/windows/splashscreen240.png" width="1152" height="1920" />
-    <splash src="res/screens/windows/splashscreen240.png" width="1152" height="1920" />
+    <splash src="res/screens/windows/splashscreen-landscape.png" width="620" height="300" />
+    <splash src="res/screens/windows/splashscreen-portrait.png" width="1152" height="1920" />
+    <splash src="res/screens/windows/splashscreen-portrait.png" width="1152" height="1920" />
   </platform>
   <platform name="wp8">
     <splash src="res/screens/wp8/splashscreen.jpg" width="480" height="800" />
   </platform>
-  <preference name="orientation" value="portrait" />
-  <preference name="fullscreen" value="false" />
-  <preference name="permissions" value="none"/>
   <!-- iOS -->
   <preference name="target-device" value="universal" />
   <preference name="exit-on-suspend" value="true" />
   <preference name="detect-data-types" value="false" />
   <!-- Android -->
-  <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+  <preference name="android-windowSoftInputMode" value="adjustResize" />
   <access origin="http://ejectufrn.com.br" subdomains="true" />
   <plugin name="cordova-plugin-network-information" version="1.2.0" />
   <plugin name="cordova-plugin-device" version="1.1.1" />

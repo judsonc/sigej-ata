@@ -5,13 +5,13 @@
 (function () {
     "use strict";
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
         // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
+        document.addEventListener('pause', onPause.bind(this), false);
+        document.addEventListener('resume', onResume.bind(this), false);
+
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
 
@@ -50,31 +50,30 @@ function checkConnection() {
     */
     if (navigator.network.connection.type == Connection.NONE) {
         alert('Você está desconectado!');
-        toggle('errorDesconnected');
-        $('body').addClass('error');
-    } else {
+        screenErrorConnection();
+    } else
         autoSession();
-    }
 }
 
 /* Habilitar displays - Views */
 function toggle(divid) {
-    if(document.getElementById(divid).style.display == "none")
+    if (document.getElementById(divid).style.display == "none")
         document.getElementById(divid).style.display = "block";
     else
         document.getElementById(divid).style.display = "none";
 }
 /* Sincronizar ponto de entrada */
-function synchronizeInput(){
+function synchronizeInput() {
     $.ajax({
-        type : 'GET',
-        url  : 'http://ejectufrn.com.br/phonegap/ata.php?getInput='+ window.name,
+        type: 'POST',
+        url : 'http://ejectufrn.com.br/phonegap/ata.php',
         crossDomain: true,
         cache: false,
-        success: function(result){
-            var result=$.parseJSON(result);
-            if (result != null) {
-                document.getElementById("inputWorkload").innerHTML = result.ATA_ENTRADA;
+        data : 'getInput=' + window.name,
+        success: function (data) {
+            var data = $.parseJSON(data);
+            if (data != null) {
+                document.getElementById("inputWorkload").innerHTML = data.ATA_ENTRADA;
                 toggle("setInWorkload");
             } else {
                 toggle("setOutWorkload");
@@ -99,14 +98,15 @@ function setLimitGetWorkload(){
 function getAllWorkload() {
     toggle("screenWorkload");
     $.ajax({
-        type        : "GET",
-        url         : "http://ejectufrn.com.br/phonegap/ata.php?id="+ window.name +"&lim=2",
-        crossDomain : true,
-        cache       : false,
-        success: function(result){
-            var result=$.parseJSON(result);
+        type: "POST",
+        url : "http://ejectufrn.com.br/phonegap/ata.php",
+        crossDomain: true,
+        cache: false,
+        data : "id=" + window.name,
+        success: function (data) {
+            var data = $.parseJSON(data);
             $("#allWorkload").html("");
-            $.each(result, function(i, field){
+            $.each(data, function (i, field) {
                 field.ATA_VALID = (field.ATA_VALID == 1) ? "valid" : "";
                 $("#allWorkload").append(
                     "<tr class=\"" + field.ATA_VALID + "\"><td>" + field.ATA_ENTRADA + "</td><td>" + field.ATA_SAIDA + "</td></tr>"
@@ -121,28 +121,30 @@ function screenWorkload(){
     getAllWorkload();
 }
 /* Set entrada do ponto */
-function setInWorkload(){
+function setInWorkload() {
     $.ajax({
-        type        : 'GET',
-        url         : 'http://ejectufrn.com.br/phonegap/ata.php?input='+ window.name,
-        crossDomain : true,
+        type: 'POST',
+        url: 'http://ejectufrn.com.br/phonegap/ata.php',
+        crossDomain: true,
         cache: false,
-        success: function(result){
-            var result=$.parseJSON(result);
-            document.getElementById("inputWorkload").innerHTML = result.ATA_ENTRADA;
+        data: "input=" + window.name,
+        success: function (data) {
+            var data = $.parseJSON(data);
+            document.getElementById("inputWorkload").innerHTML = data.ATA_ENTRADA;
             toggle("setInWorkload");
             toggle("setOutWorkload");
         }
     });
 }
 /* Set saida do ponto */
-function setOutWorkload(){
+function setOutWorkload() {
     $.ajax({
-        type : 'GET',
-        url  : 'http://ejectufrn.com.br/phonegap/ata.php?output='+ window.name,
+        type: 'POST',
+        url : 'http://ejectufrn.com.br/phonegap/ata.php',
         crossDomain: true,
         cache: false,
-        success: function(result){
+        data: "output=" + window.name,
+        success: function (data) {
             alert('Carga Horária Salva!');
             getAllWorkload();
             document.getElementById("inputWorkload").innerHTML = '';
@@ -155,14 +157,14 @@ function setOutWorkload(){
 function formSubmitLogin() {
     toggle('screenLogin');
     $('input[name=uuid]').val(device.uuid);
-    $('#formLogin').submit(function() {
+    $('#formLogin').submit(function () {
         var formData = $(this).serialize();
         $.ajax({
-            type  : 'POST',
-            url   : 'http://ejectufrn.com.br/phonegap/validacao.php',
-            data  : formData,
-            beforeSend: function(){ $("input[name=send]").val('Entrando...');},
-            success: function(data){
+            type: 'POST',
+            url : 'http://ejectufrn.com.br/phonegap/validacao.php',
+            data: formData,
+            beforeSend: function () { $("input[name=send]").val('Entrando...'); },
+            success: function (data) {
                 if (data.match(/error/)) {
                     var res = data.split(",");
                     alert(res[1]);
@@ -185,14 +187,12 @@ function autoSession() {
     $.ajax({
         type: 'POST',
         url : 'http://ejectufrn.com.br/phonegap/checa.php',
-        data: 'getuuid='+ device.uuid,
+        data: 'getuuid=' + device.uuid,
         success: function (data) {
             if (data.match(/error/)) {
                 var res = data.split(",");
                 alert(res[1]);
-                $('body').addClass('error');
-                toggle('formLogin');
-                toggle('screenLogin');
+                screenErrorConnection();
             } else if (data) {
                 window.name = data;
                 toggle("header");
@@ -204,6 +204,16 @@ function autoSession() {
         }
     });
 }
+/* Tela de Erro de Conexão */
+function screenErrorConnection() {
+    $('body').addClass('error');
+    $('#formLogin').addClass('bounceOut');
+    toggle('screenLogin');
+    setTimeout(function () {
+        toggle('formLogin');
+        toggle('errorDesconnected');
+    }, 600);
+}
 /* Encerrar sessão */
 function logout() {
     $.ajax({
@@ -213,6 +223,6 @@ function logout() {
         beforeSend: function () { $("#logout").innerHTML = 'Encerrando...'; },
         success: function (data) {
             navigator.app.exitApp();
-        }        
+        }
     });
 }

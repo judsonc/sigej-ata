@@ -3,5 +3,5 @@ Login pra ata desenvolvido em PhoneGap
 
 *Validação de IP
 *Validação do Usuário
-*Sessão automática
-*Validar ponto
+*Sessão Automática
+*Validar Entrada e Saída da Ata
