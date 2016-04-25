@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.2.5" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.2.6" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
   <name>AtaSIGEJ</name>
   <description>Aplicativo para dar entrada e saída na Ata Virtual da EJECT - Empresa Júnior da Escola de Ciências e Tecnologia - UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
@@ -56,7 +56,19 @@
     <icon src="res/icons/ios/icon.png" width="100" height="100" />
   </platform>
   <platform name="windows">
-    <icon src="res/icons/windows/icon.png" />
+    <icon src="res/icons/windows/icon.png" width="150" height="150" />
+    <icon src="res/icons/windows/icon.png" width="360" height="360" />
+    <icon src="res/icons/windows/icon.png" width="30" height="30" />
+    <icon src="res/icons/windows/icon.png" width="310" height="310" />
+    <icon src="res/icons/windows/icon.png" width="44" height="44" />
+    <icon src="res/icons/windows/icon.png" width="106" height="106" />
+    <icon src="res/icons/windows/icon.png" width="70" height="70" />
+    <icon src="res/icons/windows/icon.png" width="71" height="71" />
+    <icon src="res/icons/windows/icon.png" width="170" height="170" />
+    <icon src="res/icons/windows/icon.png" width="50" height="50" />
+    <icon src="res/icons/windows/icon.png" width="120" height="120" />
+    <icon src="res/icons/windows/icon.png" width="310" height="150" />
+    <icon src="res/icons/windows/icon.png" width="744" height="360" />
   </platform>
   <platform name="wp8">
     <icon src="res/icons/wp8/Application.png" width="62" height="62" />
@@ -98,7 +110,7 @@
   <preference name="detect-data-types" value="false" />
   <!-- Android -->
   <preference name="android-windowSoftInputMode" value="adjustResize" />
-  <access origin="http://ejectufrn.com.br" subdomains="true" />
+  <access origin="*" subdomains="true" />
   <plugin name="cordova-plugin-network-information" version="1.2.0" />
   <plugin name="cordova-plugin-device" version="1.1.1" />
 </widget>
