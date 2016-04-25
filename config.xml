@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.2.6" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp60ae31" version="0.3.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="pt-BR">
   <name>AtaSIGEJ</name>
   <description>Aplicativo para dar entrada e saída na Ata Virtual da EJECT - Empresa Júnior da Escola de Ciências e Tecnologia - UFRN</description>
   <author href="http://github.com/judsonc" email="judsoncosta@ejectufrn.com.br">Judson Costa</author>
@@ -110,11 +110,7 @@
   <preference name="detect-data-types" value="false" />
   <!-- Android -->
   <preference name="android-windowSoftInputMode" value="adjustResize" />
-<<<<<<< HEAD
   <access origin="*" subdomains="true" />
-=======
-  <access origin="*" />
->>>>>>> origin/master
   <plugin name="cordova-plugin-network-information" version="1.2.0" />
   <plugin name="cordova-plugin-device" version="1.1.1" />
 </widget>
