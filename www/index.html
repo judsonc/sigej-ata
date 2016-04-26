@@ -1,111 +1,111 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="format-detection" content="telephone=no" />
-	    <meta name="msapplication-tap-highlight" content="no" />
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <title>SIGUEJECT</title>
-	    <link rel="stylesheet" type="text/css" href="./css/index.css" />
-	    <link rel="stylesheet" type="text/css" href="./css/animate.min.css" />
-	</head>
-	<body>
-	    <div id="screenLogin" style="display:none;" class="animated fadeIn">
-	        <div class="container div-center">
-	            <div class="title text-center">
-	                <h2>SIGUEJECT</h2>
-	            </div>
-	            <div class="formulario text-center">
-	                <img src="./images/logo.png" class="img-responsive div-center" />
-	                <form method="post" id="formLogin" class="animated">
-	                    <fieldset>
-	                        <div>
-	                            <input type="hidden" name="id" value="" />
-	                        </div>
-	                        <div>
-	                            <input type="hidden" name="uuid" value="" />
-	                        </div>
-	                        <div>
-	                            <input type="text" name="login" value="" placeholder="Login" class="form-control" required />
-	                        </div>
-	                        <div>
-	                            <input type="password" name="password" value="" placeholder="Senha" class="form-control" required />
-	                        </div>
-	                        <input type="submit" name="send" value="Entrar" class="btn" />
-	                    </fieldset>
-	                </form>
-	            </div>
-	            <div id="errorDesconnected" class="title text-center animated bounceInUp" style="display:none;">
-	                <h1> - ! - </h1><br />
-	                <p>O aplicativo precisa<br />estar conectado à rede<br />da EJECT para funcionar.</p><br />
-	                <h1>:(</h1>
-	            </div>
-	        </div>
-	    </div>
-	    <div id="header" style="display:none;">
-	        <header class="container div-center title text-center">
-	            <!--span id="goBack" style="display:none;" class="pull-left">
-	                <a id="clickGoBack" onclick="goBack();">
-	                    <img src="images/back.png" width="35" height="35" />
-	                </a>
-	            </span->
-	            <h1>Ata Virtual</h1-->
-	            <div class="nav-toggle toggle">
-	                <p>
-	                    <span>Ata Virtual</span>
-	                </p>
-	                <span class="bars bars-down"></span>
-	                <span class="bars bars-up" style="display:none;"></span>
-	            </div>
-	            <div style="display: none;" class="menu">
-	                <ul class="navigation">
-	                    <li class="item-menu"><a onclick="logout();">Encerrar Sessão</a></li>
-	                </ul>
-	            </div>
-	        </header>
-	    </div>
-	    <div id="screenIndex" style="display:none;" class="align-vertical">
-	        <div class="container div-center">
-	            <div id="setWorkload" class="align-vertical">
-	                <br /><br /><br /><br /><br />
-	                <a onclick="setInWorkload();" class="animated bounceIn">
-	                    <span id="setInWorkload">Entrar</span>
-	                </a>
-	                <a onclick="setOutWorkload();" class="animated bounceIn">
-	                    <span id="setOutWorkload">Sair</span>
-	                </a>
-	                <!--div><span id="outputWorkload"></span></div-->
-	            </div>
-	            <br />
-	            <p class="text-center"><span id="inputWorkload"></span></p>
-	            <!--div><a onclick="screenWorkload();" class="btn pull-right">Ver tabela CH</a></div-->
-	        </div>
-	        <div id="screenWorkload" style="display:none;">
-	            <div class="container div-center">
-	                <!--div>
-	                Mostrar <select id="limitGetWorkload" onBlur="getAllWorkload();" class="form-control">
-	                    <option value="3" selected>3</option>
-	                    <option value="6">6</option>
-	                    <option value="9">9</option>
-	                </select>
-	                resultados
-	            </div-->
-	                <table class="text-center">
-	                    <thead>
-	                        <tr class="bg-primary">
-	                            <th>Entrada</th>
-	                            <th>Saída</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody id="allWorkload" class="bg-info"></tbody>
-	                </table>
-	            </div>
-	        </div>
-	    </div>
-	    <!-- Cordova reference, this is added to your app when it's built. -->
-	    <script src="cordova.js"></script>
-	    <script src="./scripts/jquery.min.js"></script>
-	    <script src="./scripts/index.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGUEJECT</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./css/animate.min.css" />
+</head>
+<body>
+    <div id="screenLogin" style="display:none;" class="animated fadeIn">
+        <div class="container div-center">
+            <div class="title text-center">
+                <h2>SIGUEJECT</h2>
+            </div>
+            <div class="formulario text-center">
+                <img src="./images/logo.png" class="img-responsive div-center" />
+                <form method="post" id="formLogin" class="animated">
+                    <fieldset>
+                        <div>
+                            <input type="hidden" name="id" value="" />
+                        </div>
+                        <div>
+                            <input type="hidden" name="uuid" value="" />
+                        </div>
+                        <div>
+                            <input type="text" name="login" value="" placeholder="Login" class="form-control" required />
+                        </div>
+                        <div>
+                            <input type="password" name="password" value="" placeholder="Senha" class="form-control" required />
+                        </div>
+                        <input type="submit" name="send" value="Entrar" class="btn" />
+                    </fieldset>
+                </form>
+            </div>
+            <div id="errorDesconnected" class="title text-center animated bounceInUp" style="display:none;">
+                <h1> - ! - </h1><br />
+                <p>O aplicativo precisa<br />estar conectado à rede<br />da EJECT para funcionar.</p><br />
+                <h1>:(</h1>
+            </div>
+        </div>
+    </div>
+    <div id="header" style="display:none;">
+        <header class="container div-center title text-center">
+            <!--span id="goBack" style="display:none;" class="pull-left">
+                <a id="clickGoBack" onclick="goBack();">
+                    <img src="images/back.png" width="35" height="35" />
+                </a>
+            </span->
+            <h1>Ata Virtual</h1-->
+            <div class="nav-toggle toggle">
+                <p>
+                    <span>Ata Virtual</span>
+                </p>
+                <span class="bars bars-down"></span>
+                <span class="bars bars-up" style="display:none;"></span>
+            </div>
+            <div style="display: none;" class="menu">
+                <ul class="navigation">
+                    <li class="item-menu"><a onclick="logout();">Encerrar Sessão</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <div id="screenIndex" style="display:none;" class="align-vertical">
+        <div class="container div-center">
+            <div id="setWorkload" class="align-vertical">
+                <br /><br /><br /><br /><br />
+                <a onclick="setInWorkload();" class="animated bounceIn">
+                    <span id="setInWorkload">Entrar</span>
+                </a>
+                <a onclick="setOutWorkload();" class="animated bounceIn">
+                    <span id="setOutWorkload">Sair</span>
+                </a>
+                <!--div><span id="outputWorkload"></span></div-->
+            </div>
+            <br />
+            <p class="text-center"><span id="inputWorkload"></span></p>
+            <!--div><a onclick="screenWorkload();" class="btn pull-right">Ver tabela CH</a></div-->
+        </div>
+        <div id="screenWorkload" style="display:none;">
+            <div class="container div-center">
+                <!--div>
+                Mostrar <select id="limitGetWorkload" onBlur="getAllWorkload();" class="form-control">
+                    <option value="3" selected>3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                </select>
+                resultados
+            </div-->
+                <table class="text-center">
+                    <thead>
+                        <tr class="bg-primary">
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allWorkload" class="bg-info"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/index.js"></script>
+</body>
 </html>
